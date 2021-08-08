@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/SampleLinearLayout/app/src/main/res/layout/activity_main.xml" value="0.3515625" />
+        <entry key="..\:/Android/SampleLinearLayout/app/src/main/res/layout/baseline.xml" value="0.36614583333333334" />
         <entry key="..\:/Android/SampleLinearLayout/app/src/main/res/layout/gravity.xml" value="0.36614583333333334" />
+        <entry key="..\:/Android/SampleLinearLayout/app/src/main/res/layout/padding.xml" value="0.36614583333333334" />
+        <entry key="..\:/Android/SampleLinearLayout/app/src/main/res/layout/weight.xml" value="0.284375" />
       </map>
     </option>
   </component>
