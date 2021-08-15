@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/SampleLayoutInflater/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Android/SampleLayoutInflater/app/src/main/res/layout/activity_menu.xml" value="0.22" />
+        <entry key="..\:/Android/SampleLayoutInflater/app/src/main/res/layout/sub.xml" value="0.14583333333333334" />
       </map>
     </option>
   </component>
