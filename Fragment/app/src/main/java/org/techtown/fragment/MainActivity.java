@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public void onFragmentChange(int index){
 
         if(index == 0){
-            // .addToBackStack(null) : 프래그먼트에서 뒤로가기 할때 
+            // .addToBackStack(null) : 프래그먼트에서 뒤로가기 할때
             getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment1).addToBackStack(null).commit();
 
         }else if(index == 1){
