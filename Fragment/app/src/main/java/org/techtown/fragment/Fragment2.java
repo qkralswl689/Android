@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class Fragment2 extends Fragment {
+public class Fragment2 extends Fragment /*implements MainActivity.onKeyBackPressedListener*/{
     MainActivity activity;
 
     @Override
@@ -20,6 +20,7 @@ public class Fragment2 extends Fragment {
         super.onAttach(context);
 
         activity = (MainActivity) getActivity();
+     /*   ((MainActivity)context).setmOnKeyBackPressedListener(this::onBackKey);*/
     }
 
     @Override
@@ -59,4 +60,11 @@ public class Fragment2 extends Fragment {
 
         return rootView;
     }
+/*
+    @Override
+    public void onBackKey() {
+        MainActivity activity = (MainActivity) getActivity();
+        activity.setmOnKeyBackPressedListener(null);
+        activity.onBackPressed();
+    }*/
 }

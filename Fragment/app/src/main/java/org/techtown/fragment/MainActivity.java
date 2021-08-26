@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
@@ -88,15 +89,41 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
     public void onFragmentChange(int index){
+
         if(index == 0){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment1).commit();
+            // .addToBackStack(null) : 프래그먼트에서 뒤로가기 할때 
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment1).addToBackStack(null).commit();
 
         }else if(index == 1){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment2).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment2).addToBackStack(null).commit();
 
         }else if(index == 2) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment3).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment3).addToBackStack(null).commit();
 
         }
     }
+
+  /*  // 뒤로가기 버튼을 뺏어올 리스너 등록
+    public interface onKeyBackPressedListener{
+        void onBackKey();
+    }
+    private onKeyBackPressedListener mOnKeyBackPressedListener;
+    public void setmOnKeyBackPressedListener(onKeyBackPressedListener listener){
+        mOnKeyBackPressedListener = listener;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(mOnKeyBackPressedListener != null){
+            mOnKeyBackPressedListener.onBackKey();
+        }else {
+            // 쌓인 BackStack 여부에 따라 Toast를 띄울지, 뒤로갈지
+            if(getSupportFragmentManager().getBackStackEntryCount() == 0){
+                Toast.makeText(this,"종료하려면 한번 더 누르세요 ",Toast.LENGTH_LONG).show();
+            }else{
+                super.onBackPressed();
+            }
+        }
+
+    }*/
 }
