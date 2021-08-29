@@ -18,7 +18,7 @@ public class PersonAdapter {
 
             // 뷰 객체에 들어 있는 텍스트뷰 참조하기
             textView = itemView.findViewById(R.id.textView);
-            textView2 = itemView.findViewById(R.id.textView2)
+            textView2 = itemView.findViewById(R.id.textView2);
         }
 
         public void setItem(Person item){
