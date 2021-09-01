@@ -39,10 +39,11 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         // 스피너 객체에다가 어댑터를 넣어줌
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            // 선택되면
+            // 값 선택되면 onItemSelected 사용
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 textView.setText(items[position]);
+
             }
 
             // 아무것도 선택되지 않은 상태일 때
