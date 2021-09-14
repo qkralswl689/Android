@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
     String[] items = {"fish", "turtle", "seal"};
 
     //EditText 설정
-    EditText extTest = (EditText) findViewById(R.id.ext_test);
+    //EditText extTest = (EditText) findViewById(R.id.ext_test);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
             }
         });
         //EditText Listener 설정
-        extTest.addTextChangedListener(new TextWatcher() {
+/*        extTest.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 //텍스트 입력이 모두 끝았을때 Call back
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
             public void afterTextChanged(Editable editable) {
                 //텍스트가 입력하기 전에 Call back
             }
-        });
+        });*/
 
     }
 
