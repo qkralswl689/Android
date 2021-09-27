@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListViewAdapter();
         listView.setAdapter(adapter);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 8; i++) {
             adapter.add_item(i+1+"번째 아이템",i+1+"번째 속성","두번째","마지막");
         }
     }
