@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 
 public class Fragment2 extends Fragment {
 
+    Context context;
+    OnTabItemSelectedListener listener;
    
     @Override
                        
@@ -23,6 +25,21 @@ public class Fragment2 extends Fragment {
 
     // 인플레이션 후 xml 레이아웃 안에 들어있는 위젯 OR 레이아웃을 찾아 변수에 할당하는 코드들을 넣기 위해 만들어 둔것
     private void initUI(ViewGroup rootView){
-        
+        Button saveButton = rootView.findViewById(R.id.saveButton);
+       saveButton.setOnClickListener(new View.OnclickListener(){
+          
+       }
+                                     
+       Button deleteButton = rootView.findViewById(R.id.deleteButton);
+       deleteButton.setOnClickListener(new View.OnclickListener(){
+          
+       }
+                                       
+       Button closeButton = rootView.findViewById(R.id.closeButton);
+       closeButton.setOnClickListener(new View.OnclickListener(){
+          
+       }
+                                      
+     
     }
 }
