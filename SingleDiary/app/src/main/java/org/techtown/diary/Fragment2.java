@@ -11,6 +11,28 @@ public class Fragment2 extends Fragment {
 
     Context context;
     OnTabItemSelectedListener listener;
+    
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        
+        this.context = context;
+        
+        if(context instanceof OnTabItemSelectedListener){
+            listener = (OnTabItemSelectedListener) context;
+        }
+    }
+    
+    
+    @Override
+    public void onDetach(){
+        super.onDetach();
+        
+        if(context != null){
+            context = null;
+            listener = null;
+        }
+    }           
    
     @Override
                        
@@ -27,19 +49,42 @@ public class Fragment2 extends Fragment {
     private void initUI(ViewGroup rootView){
         Button saveButton = rootView.findViewById(R.id.saveButton);
        saveButton.setOnClickListener(new View.OnclickListener(){
-          
-       }
-                                     
+          @Override
+        public void onClick(View v){
+            if(listener != null){
+                listener.onTabSelected(0);
+            }
+        }
+       });
+            
+      
        Button deleteButton = rootView.findViewById(R.id.deleteButton);
        deleteButton.setOnClickListener(new View.OnclickListener(){
-          
-       }
+          @Override
+        public void onClick(View v){
+            if(listener != null){
+                listener.onTabSelected(0);
+            }
+        }
+       });
                                        
        Button closeButton = rootView.findViewById(R.id.closeButton);
        closeButton.setOnClickListener(new View.OnclickListener(){
-          
-       }
+          @Override
+        public void onClick(View v){
+            if(listener != null){
+                listener.onTabSelected(0);
+            }
+        }
+       });
                                       
-     
+     RangeSliderView sliderView = rootView.findViewById(R.id.sliderView);
+        sliderView.setOnSlideListener(new RangeSliderView.OnSlideListener(){
+        @Override
+        public void onSlide(int index){
+           Toast.makeText(context,"moodIndex Changed to" + index, Toast.LENGTH_LONG).show();
+        }
+    });
+        sliderView.setInitialIndex(2);
     }
 }
