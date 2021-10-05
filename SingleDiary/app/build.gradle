@@ -28,11 +28,10 @@ android {
 
 
 }
-/*
-repositories {
+// settings.gradle 에 설정
+/*repositories {
     maven { url 'https://jitpack.io' }
-}
-*/
+}*/
 
 
 dependencies {

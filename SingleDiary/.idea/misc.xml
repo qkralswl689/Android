@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/SingleDiary/app/src/main/res/drawable/item_color.xml" value="0.22083333333333333" />
         <entry key="..\:/Android/SingleDiary/app/src/main/res/drawable/select_button.xml" value="0.38229166666666664" />
         <entry key="..\:/Android/SingleDiary/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Android/SingleDiary/app/src/main/res/layout/fragment1.xml" value="0.36614583333333334" />
