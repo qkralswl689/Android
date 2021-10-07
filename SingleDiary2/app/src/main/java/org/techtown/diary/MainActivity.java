@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -26,9 +27,15 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
 
     BottomNavigationView bottomNavigation;
 
+    // 현재 위치를 담고있을 변수
     Location currentLocation;
+    
+    // 위치정보를 수신할 변수
     GPSListener gpsListener;
+    
+    // 위치를 확인한 후 위치 요청을 취소할 수 있도록 위치 정보를 확인한 횟수
     int locationCount = 0;
+    
     String currentWeather;
     String currentAddress;
     String currentDateString;
@@ -83,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
 
     }
 
-    // 지도
+    // Fragment2 클래스에서 호출할 것
     @Override
     public void onRequest(String command) {
 
@@ -94,16 +101,21 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
         }
     }
 
+    // 위치 확인 시작
     private void getCurrentLocation() {
+        // 현재 일자 확인후
         currentDate = new Date();
         currentDateString = AppConstants.dateFormat3.format(currentDate);
+        // fragment2 에 설정후
         if(fragment2 != null){
             fragment2.setDateString(currentDateString);
         }
+        
         LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
          try {
 
+             // LocationManager객체에게 현재 위치를 요청
              currentLocation = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
              if(currentLocation != null){
                  Double latitude = currentLocation.getLatitude();
@@ -111,11 +123,57 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
                  String message = "Last Location -> Latitude : " + latitude + "\nLongitude:" + longitude;
                  println(message);
 
+                 // 위치가 확인되면 getCurrentWeather,getCurrentAddress 메서드 호출
+
+                 // 현재 위치를 이용해 날씨 확인
                  getCurrentWeather();
-                 getCurrentAddress();
+                 // 현재 위치를 이용해 주소 확인인
+                getCurrentAddress();
              }
+             
+             gpsListener = new GPSListener();
+             long minTime = 10000;
+             float mindistance = 0;
+
+             manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,mindistance,gpsListener);
+             println("Current location requested.");
+             
          }catch (SecurityException e){
              e.printStackTrace();
          }
+    }
+    public void stopLocationService(){
+        LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        
+        try{
+            manager.removeUpdates(gpsListener);
+            println("Current location requested.");
+        }catch (SecurityException e){
+            e.printStackTrace();
+        }
+    }
+
+    // 요청된 위치를 수신하기위해 만든것
+    class GPSListener implements LocationListener{
+
+        @Override
+        public void onLocationChanged(@NonNull Location location) {
+            
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            
+        }
+
+        @Override
+        public void onProviderEnabled(@NonNull String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(@NonNull String provider) {
+
+        }
     }
 }
