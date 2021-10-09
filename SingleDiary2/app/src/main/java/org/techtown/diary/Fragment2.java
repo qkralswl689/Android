@@ -13,15 +13,19 @@ import androidx.fragment.app.Fragment;
 import com.github.channguyen.rsv.RangeSliderView;
 
 public class Fragment2 extends Fragment {
+    private static final String TAG = "Fragment2";
+   
 
     Context context;
     OnTabItemSelectedListener listener;
+    OnRequestistener requestListener;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
         this.context = context;
+
 
         if (context instanceof OnTabItemSelectedListener) {
             listener = (OnTabItemSelectedListener) context;
