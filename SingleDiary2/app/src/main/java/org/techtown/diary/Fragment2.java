@@ -30,6 +30,9 @@ public class Fragment2 extends Fragment {
         if (context instanceof OnTabItemSelectedListener) {
             listener = (OnTabItemSelectedListener) context;
         }
+        if(context instanceof OnrequestListener){
+            requestListener = (OnRequstListener) context;
+        }
     }
 
 
@@ -40,6 +43,7 @@ public class Fragment2 extends Fragment {
         if (context != null) {
             context = null;
             listener = null;
+            requstListener = null;
         }
     }
 
