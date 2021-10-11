@@ -18,7 +18,7 @@ public class Fragment2 extends Fragment {
 
     Context context;
     OnTabItemSelectedListener listener;
-    OnRequestistener requestListener;
+    OnRequestListener requestListener;
 
     @Override
     public void onAttach(Context context) {
@@ -30,8 +30,8 @@ public class Fragment2 extends Fragment {
         if (context instanceof OnTabItemSelectedListener) {
             listener = (OnTabItemSelectedListener) context;
         }
-        if(context instanceof OnrequestListener){
-            requestListener = (OnRequstListener) context;
+        if(context instanceof OnRequestListener){
+            requestListener = (OnRequestListener) context;
         }
     }
 
@@ -43,7 +43,7 @@ public class Fragment2 extends Fragment {
         if (context != null) {
             context = null;
             listener = null;
-            requstListener = null;
+            requestListener = null;
         }
     }
 
@@ -55,6 +55,9 @@ public class Fragment2 extends Fragment {
 
         initUI(rootView);
 
+        if(requestListener != null){{
+            requestListener.onRequest("getCrrentcation");
+        }}
         return rootView;
     }
 
