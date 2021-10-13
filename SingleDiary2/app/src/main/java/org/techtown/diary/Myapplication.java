@@ -9,6 +9,7 @@ import com.android.volley.toolbox.Volley;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 
 public class Myapplication extends Application {
     private static final String TAG = "MyApplication";
@@ -29,5 +30,13 @@ public class Myapplication extends Application {
                 }
             });
         }
+    }
+    public static interface OnResponseListener{
+        public void processResponse(int requestCode, int responseCode, String response);
+    }
+    public static void send(final int requestCode, final int requestMethod, final String url,
+                            final Map<String,String > parmas,
+                            final OnResponseListener listener){
+        
     }
 }
