@@ -30,9 +30,10 @@ public class Fragment2 extends Fragment {
         if (context instanceof OnTabItemSelectedListener) {
             listener = (OnTabItemSelectedListener) context;
         }
-        if(context instanceof OnRequestListener){
-            requestListener = (OnRequestListener) context;
-        }
+        //if(context instanceof OnRequestListener){
+          //  requestListener = (OnRequestListener) context;
+           
+        //}
     }
 
 
