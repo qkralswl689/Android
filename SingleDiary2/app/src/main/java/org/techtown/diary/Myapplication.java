@@ -37,6 +37,20 @@ public class Myapplication extends Application {
     public static void send(final int requestCode, final int requestMethod, final String url,
                             final Map<String,String > parmas,
                             final OnResponseListener listener){
+        StringRequest request = new StringRequest{
+            requestMethod,
+            url,
+            new Response.Listener<String>() {
+             @Override
+             public void onResponse(String response) {
+                 Log.d(TAG,"Response for " + requestCode + " -> " + response);
+                 
+                 if (listener != null) {
+                     listener.processResponse(requestCode,200,response);
+                 }
+             }
+            },
+            
         
     }
 }
