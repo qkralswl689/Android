@@ -50,6 +50,18 @@ public class Myapplication extends Application {
                  }
              }
             },
+            new Response.ErrorListener() {
+              @Override
+                public void OnErrorResponse(VolletError error) {
+                    Log.d(TAG,"Error For " + requestCode + " -> " + error.getMessage());
+                    
+                    if(listener != null ) {
+                        listener.processResponse(requestCode, 400 , error.getMessage());
+                    }
+                }
+            }
+            ){
+            }
             
         
     }
