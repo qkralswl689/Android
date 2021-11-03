@@ -13,7 +13,7 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
+
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //어뎁터 시작
+    /*//어뎁터 시작
     public class ListAdapter extends BaseAdapter {
 
         @Override
@@ -207,5 +207,5 @@ public class MainActivity extends AppCompatActivity {
                 listViewItemList.remove(listViewItemList.size() - 1);
             }
         }
-    }
+    }*/
 }
