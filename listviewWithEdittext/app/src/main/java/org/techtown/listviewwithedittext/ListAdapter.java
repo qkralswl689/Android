@@ -19,9 +19,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by user on 2017-10-23.
- */
 
 public class ListAdapter extends BaseAdapter {
 
