@@ -32,6 +32,7 @@ public class Fragment2 extends Fragment {
         }
         if(context instanceof OnRequestListener){
             requestListener = (OnRequestListener) context;
+           
         }
     }
 
