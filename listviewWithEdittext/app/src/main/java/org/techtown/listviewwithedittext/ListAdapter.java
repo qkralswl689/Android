@@ -65,7 +65,7 @@ public class ListAdapter extends BaseAdapter {
 
         holder.ref = position;
 
-        // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
+        // 화면에 표시될 View (Layout이 inflate된) 으로부터 위젯에 대한 참조 획득
         final EditText editText1 = (EditText)convertView.findViewById(R.id.editText1);
 
         // Data Set(filteredItemList)에서 position에 위치한 데이터 참조 획득
