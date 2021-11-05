@@ -36,7 +36,6 @@
         android:textColor="@android:color/black"
         android:ems="10" >
         <requestFocus />
-
     </EditText>
 
     <TextView
@@ -52,4 +51,5 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:ems="10" />
+    
 </LinearLayout>
