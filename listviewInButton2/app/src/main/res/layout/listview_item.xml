@@ -46,9 +46,9 @@
         android:layout_weight="20"
         android:id="@+id/btnSelector_mins"
         />
-    <View
+   <!-- <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
 
-        />
+        />-->
 </LinearLayout>
