@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 1000; ++i)
         {
             ItemData oItem = new ItemData();
-            oItem.strTitle = "데이터 " + (i + 1);
+
+            oItem.strTitle = "1";
             oItem.strDate = strDate[nDatCnt++];
             oItem.onClickListener = this;
             oData.add(oItem);
@@ -51,17 +52,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        View oParentView = (View)v.getParent();
-        TextView oTextTitle = (TextView) oParentView.findViewById(R.id.textTitle);
-        String position = (String) oParentView.getTag();
+        if(v.getId() == R.id.btnSelector){
+            View oParentView = (View)v.getParent();
+            TextView oTextTitle = (TextView) oParentView.findViewById(R.id.textTitle);
+            String position = (String) oParentView.getTag();
 
-        AlertDialog.Builder oDialog = new AlertDialog.Builder(this,
-                android.R.style.Theme_DeviceDefault_Light_Dialog);
+            String tmp = oTextTitle.getText().toString();
+            int emp = Integer.parseInt(tmp);
+            emp ++;
+            oTextTitle.setText(String.valueOf(emp));
+            /*AlertDialog.Builder oDialog = new AlertDialog.Builder(this,
+                    android.R.style.Theme_DeviceDefault_Light_Dialog);
 
-        String strMsg = "선택한 아이템의 position 은 " + position + " 입니다.\nTitle 텍스트 :" + oTextTitle.getText();
-        oDialog.setMessage(strMsg)
-                .setPositiveButton("확인", null)
-                .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
-                .show();
+            String strMsg = "선택한 아이템의 position 은 " + position + " 입니다.\nTitle 텍스트 :" + oTextTitle.getText();
+            oDialog.setMessage(strMsg)
+                    .setPositiveButton("확인", null)
+                    .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
+                    .show();  */
+        }
+        if(v.getId() == R.id.btnSelector_mins){
+            View oParentView = (View)v.getParent();
+            TextView oTextTitle = (TextView) oParentView.findViewById(R.id.textTitle);
+            String position = (String) oParentView.getTag();
+
+            String tmp = oTextTitle.getText().toString();
+            int emp = Integer.parseInt(tmp);
+            emp --;
+            oTextTitle.setText(String.valueOf(emp));
+
+        }
+
     }
 }

@@ -57,10 +57,13 @@ public class ListAdapter extends BaseAdapter {
         TextView oTextTitle = (TextView) convertView.findViewById(R.id.textTitle);
         TextView oTextDate = (TextView) convertView.findViewById(R.id.textDate);
         Button oBtn = (Button) convertView.findViewById(R.id.btnSelector);
+        Button oBtn2 = (Button) convertView.findViewById(R.id.btnSelector_mins);
+
 
         oTextTitle.setText(m_oData.get(position).strTitle);
         oTextDate.setText(m_oData.get(position).strDate);
         oBtn.setOnClickListener(m_oData.get(position).onClickListener);
+        oBtn2.setOnClickListener(m_oData.get(position).onClickListener);
 
         convertView.setTag(""+position);
         return convertView;
