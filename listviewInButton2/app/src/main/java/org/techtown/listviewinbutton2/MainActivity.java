@@ -14,9 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ListView m_oListView = null;
 
  /*  ① 각 아이템 마다 setTag로 position을 등록 합니다.
-
-    ② 선택버튼 이벤트를 MainActivity 로 발생되도록 합니다.
-
+     ② 선택버튼 이벤트를 MainActivity 로 발생되도록 합니다.
      ③ 이벤트 발생 시 getParent 로 선택 버튼 부모를 얻어옵니다. 즉, 아이템 위젯이 얻어와 지겠죠..그리고 Tag를 읽어오면 됩니다.*/
 
 
