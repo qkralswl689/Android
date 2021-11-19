@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
     Fragment1 fragment1;
     Fragment2 fragment2;
     Fragment3 fragment3;
-
     BottomNavigationView bottomNavigation;
 
     // 현재 위치를 담고있을 변수
@@ -152,7 +151,6 @@ public class MainActivity extends AppCompatActivity implements OnTabItemSelected
             e.printStackTrace();
         }
     }
-
     // 요청된 위치를 수신하기위해 만든것
     class GPSListener implements LocationListener{
 
